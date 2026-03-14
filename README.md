@@ -1,2 +1,1 @@
-Oiii link para vizualização: 
- <a href="https://esthernascimento.github.io/esther-machine/" target="_blank"> </a>
+[Acesse a Esther Machine aqui](https://esthernascimento.github.io/esther-machine/)
