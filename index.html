@@ -10,7 +10,6 @@
 
 <body>
 
-
     <div id="div_cabecalho">
         <img src="./img/djthee.png" width="350px">
         <img src="./img/machine.png" width="200px">
@@ -19,7 +18,7 @@
 
     <div id="div_container">
         <div id="div_inputs">
-            <h1>Theé's Machine</h1>
+            <h1>Bem-vindo(a)</h1>
 
             <h3>Digite um número:</h3>
             <input id="ipt_numero" type="text" placeholder="Digite um valor">
@@ -28,12 +27,12 @@
             <label>Selecione a base do número digitado:</label> <br> <br>
 
             <select id="sistema_numeracao">
-                <option disabled selected value="#">Selecione uma base</option>
-                <option value="binario">Base 2</option>
-                <option value="octal">Base 8</option>
-                <option value="decimal">Base 10</option>
-                <option value="hexadecimal">Base 16</option>
-            </select> <br> <br> 
+                <option disabled selected value="#">Escolha a base...</option>
+                <option value="binario">Binário (Base 2)</option>
+                <option value="octal">Octal (Base 8)</option>
+                <option value="decimal">Decimal (Base 10)</option>
+                <option value="hexadecimal">Hexadecimal (Base 16)</option>
+            </select> <br> <br>
 
             <button onclick="converter()">Converter</button>
 
@@ -43,10 +42,12 @@
             <h1>Conversão</h1>
             <h3>Resultados:</h3>
 
-            <div id="div_resultado_binario"></div> <br> <br> 
-            <div id="div_resultado_octal"></div> <br> <br> 
-            <div id="div_resultado_decimal"></div> <br> <br> 
-            <div id="div_resultado_hexadecimal"></div> <br> <br> 
+            <div id="div_resultado_binario"></div> <br> <br>
+            <div id="div_resultado_octal"></div> <br> <br>
+            <div id="div_resultado_decimal"></div> <br> <br>
+            <div id="div_resultado_hexadecimal"></div> <br> <br>
+
+            <img src="./img/etzinho.png" width="450px" alt="">
 
         </div>
 
@@ -66,6 +67,15 @@
             div_resultado_decimal.innerHTML = "";
             div_resultado_hexadecimal.innerHTML = "";
 
+            if (numero == "" || base == "#") {
+                alert("Preencha o número e a base!");
+                div_resultado_binario.innerHTML = "";
+                div_resultado_octal.innerHTML = "";
+                div_resultado_decimal.innerHTML = "";
+                div_resultado_hexadecimal.innerHTML = "";
+
+            } 
+            
             if (base == 'binario') {
                 numeroDecimal = parseInt(numero, 2);
 
@@ -82,8 +92,7 @@
             div_resultado_decimal.innerHTML = `Decimal: ${numeroDecimal}`;
             div_resultado_binario.innerHTML = `Binário: ${numeroDecimal.toString(2)}`;
             div_resultado_octal.innerHTML = `Octal: ${numeroDecimal.toString(8)}`;
-            div_resultado_hexadecimal.innerHTML = `Hexadecimal: ${numeroDecimal.toString(16)}`;
-
+            div_resultado_hexadecimal.innerHTML = `Hexadecimal: ${numeroDecimal.toString(16).toUpperCase()}`;
         }
 
     </script>
